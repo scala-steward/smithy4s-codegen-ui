@@ -15,7 +15,7 @@
 
 Full stack Scala application with a Scalajs frontend. Depends on [Frontend](#frontend). This application is built on on top of Smithy4s and is deployed as a Docker container on fly.io.
 
-Live at: https://morning-bird-7081.fly.dev/
+Live at: https://smithy4s-codegen-ui.fly.dev/
 
 Deployed on a very small 2vcpu and 512mb vm.
 
@@ -47,12 +47,12 @@ It is recomended that you have 3 long running proccesses to develop this applica
 
 ## Dockerhub
 
-The images are pushed to the [docker hub](https://hub.docker.com/repository/docker/daddykotex/smithy4s-code-generation/general) so you can deploy them on your own infrastructure.
+The images are pushed to the [docker hub](https://hub.docker.com/repository/docker/kubukoz/smithy4s-code-generation/general) so you can deploy them on your own infrastructure.
 
-* latest: daddykotex/smithy4s-code-generation:latest
-* latest: daddykotex/smithy4s-code-generation:with-dependencies
-* daddykotex/smithy4s-code-generation:$SHA
-* daddykotex/smithy4s-code-generation:with-dependencies-$SHA
+* latest: kubukoz/smithy4s-code-generation:latest
+* latest: kubukoz/smithy4s-code-generation:with-dependencies
+* kubukoz/smithy4s-code-generation:$SHA
+* kubukoz/smithy4s-code-generation:with-dependencies-$SHA
 
 ## Fly.io
 

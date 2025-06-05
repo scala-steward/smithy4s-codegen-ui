@@ -4,12 +4,12 @@ import smithy4s_codegen._
 
 ThisBuild / organization := "com.example"
 ThisBuild / organizationName := "example"
-ThisBuild / scalaVersion := "2.13.14"
+ThisBuild / scalaVersion := "2.13.16"
 ThisBuild / dynverSeparator := "-"
 
-val http4sVersion = "0.23.27"
-val smithyVersion = "1.45.0"
-val circeVersion = "0.14.1"
+val http4sVersion = "0.23.30"
+val smithyVersion = "1.58.0"
+val circeVersion = "0.14.13"
 val cirisVersion = "3.5.0"
 
 lazy val baseUri = settingKey[String](
@@ -63,10 +63,10 @@ lazy val frontend = (project in file("modules/frontend"))
      * It provides static types for the browser DOM APIs.
      */
     libraryDependencies ++= Seq(
-      "org.scala-js" %%% "scalajs-dom" % "2.4.0",
-      "com.raquo" %%% "laminar" % "16.0.0",
+      "org.scala-js" %%% "scalajs-dom" % "2.8.0",
+      "com.raquo" %%% "laminar" % "17.2.1",
       "com.disneystreaming.smithy4s" %%% "smithy4s-http4s" % smithy4sVersion.value,
-      "org.http4s" %%% "http4s-dom" % "0.2.3",
+      "org.http4s" %%% "http4s-dom" % "0.2.12",
       "org.http4s" %%% "http4s-client" % http4sVersion
     ),
     baseUri := {
@@ -199,7 +199,7 @@ lazy val backend = (project in file("modules/backend"))
     },
     Docker / dockerExposedPorts := List(9000),
     Docker / packageName := "smithy4s-code-generation",
-    Docker / dockerRepository := Some("daddykotex"),
+    Docker / dockerRepository := Some("kubukoz"),
     dockerTagOverride := None,
     dockerUpdateLatest := true,
     dockerLabels ++= {
@@ -208,7 +208,7 @@ lazy val backend = (project in file("modules/backend"))
     dockerAliases := {
       val flyAlias =
         dockerAlias.value
-          .withName("morning-bird-7081")
+          .withName("smithy4s-codegen-ui")
           .withRegistryHost(Option("registry.fly.io"))
 
       dockerTagOverride.value match {

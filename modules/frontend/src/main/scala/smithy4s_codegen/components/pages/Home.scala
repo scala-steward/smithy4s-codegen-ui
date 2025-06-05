@@ -24,7 +24,7 @@ object Home {
     val validate: EventStream[CodeEditor.ValidationResult] =
       editor.editorContent.signal
         .composeChanges(_.debounce(2000))
-        .flatMap { content =>
+        .flatMapSwitch { content =>
           api
             .smithyValidate(content.code, Some(content.deps.toList))
             .map(_ => CodeEditor.ValidationResult.Success(content))
@@ -39,7 +39,7 @@ object Home {
     val convertedToSmithy4s: EventStream[CodeEditor.Smithy4sConversionResult] =
       validate.compose {
         _.collect { case ValidationResult.Success(content) => content }
-          .flatMap { content =>
+          .flatMapSwitch { content =>
             api
               .smithy4sConvert(content.code, Some(content.deps.toList))
               .map(r =>
