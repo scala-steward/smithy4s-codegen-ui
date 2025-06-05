@@ -4,7 +4,7 @@
 #
 
 app = "smithy4s-codegen-ui"
-primary_region = "yul"
+primary_region = "waw"
 kill_signal = "SIGINT"
 kill_timeout = 5
 [build]
