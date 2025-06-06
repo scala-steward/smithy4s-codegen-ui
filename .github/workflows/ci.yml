@@ -42,7 +42,6 @@ jobs:
           path: targets.tar
 
   deploy:
-    needs: build
     name: Deploy app
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
