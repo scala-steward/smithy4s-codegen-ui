@@ -6,8 +6,5 @@
       "com.disneystreaming.alloy:alloy-core:0.3.6"
     ]
   },
-  "imports": [
-    "modules/frontend/src/main/smithy",
-    "modules/frontend/target/scala-2.13/src_managed/main/smithy"
-  ]
+  "sources": ["modules/api/src/main/resources/META-INF/smithy"]
 }
