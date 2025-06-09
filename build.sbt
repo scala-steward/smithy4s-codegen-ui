@@ -175,7 +175,8 @@ lazy val backend = (project in file("modules/backend"))
     ),
     smithyClasspathDir := "smithy-classpath",
     smithyClasspath := Seq(
-      "com.disneystreaming.smithy4s" % "smithy4s-protocol" % smithy4sVersion.value
+      "com.disneystreaming.smithy4s" % "smithy4s-protocol" % smithy4sVersion.value,
+      "com.disneystreaming.alloy" % "alloy-core" % smithy4s.codegen.BuildInfo.alloyVersion
     ),
     Compile / resourceGenerators += Def.task {
       val dir = frontend.base

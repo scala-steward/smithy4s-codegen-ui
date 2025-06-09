@@ -50,9 +50,7 @@ It is recomended that you have 3 long running proccesses to develop this applica
 The images are pushed to the [docker hub](https://hub.docker.com/repository/docker/kubukoz/smithy4s-code-generation/general) so you can deploy them on your own infrastructure.
 
 * latest: kubukoz/smithy4s-code-generation:latest
-* latest: kubukoz/smithy4s-code-generation:with-dependencies
 * kubukoz/smithy4s-code-generation:$SHA
-* kubukoz/smithy4s-code-generation:with-dependencies-$SHA
 
 ## Fly.io
 
