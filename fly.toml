@@ -10,8 +10,8 @@ kill_timeout = 5
 [build]
   image = "registry.fly.io/smithy4s-codegen-ui"
 
-[env]
-  JAVA_OPTS = "-Xms384m -Xmx384m"
+#[env]
+#  JAVA_OPTS = "-Xms384m -Xmx384m"
 
 [experimental]
   auto_rollback = true
@@ -51,4 +51,4 @@ kill_timeout = 5
 
 [[vm]]
   size = "shared-cpu-1x"
-  memory = "512mb"
+#  memory = "512mb"
