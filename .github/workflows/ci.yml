@@ -45,6 +45,10 @@ jobs:
     name: Deploy app
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: "https://smithy4s-codegen-ui.fly.dev/"
+
     steps:
       - name: Checkout current branch (full)
         uses: actions/checkout@v3
