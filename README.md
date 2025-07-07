@@ -1,5 +1,7 @@
 # Generate Smithy4s code on the fly <!-- omit in toc -->
 
+This repository is a maintained fork of [daddykotex/smithy4s-code-generation](https://github.com/daddykotex/smithy4s-code-generation).
+
 - [Modules](#modules)
   - [Backend](#backend)
     - [Configuration](#configuration)
