@@ -26,7 +26,7 @@ jobs:
           jvm: temurin:1.17
           apps: sbt
 
-      - run: sbt "test"
+      - run: sbt ci
 
       - run: ./scripts/build-image.sh
         env:

@@ -7,6 +7,8 @@ ThisBuild / organizationName := "example"
 ThisBuild / scalaVersion := "2.13.16"
 ThisBuild / dynverSeparator := "-"
 
+ThisBuild / mergifyStewardConfig ~= (_.map(_.withMergeMinors(true)))
+
 val http4sVersion = "0.23.30"
 val smithyVersion = "1.58.0"
 val circeVersion = "0.14.13"
@@ -39,6 +41,9 @@ lazy val dockerTagOverride = settingKey[Option[String]](
 
 lazy val root = (project in file("."))
   .aggregate(api, frontend, backend)
+  .settings(
+    addCommandAlias("ci", "mergifyCheck;test")
+  )
 
 lazy val api = (project in file("modules/api"))
 
