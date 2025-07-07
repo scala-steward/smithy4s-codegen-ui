@@ -67,9 +67,9 @@ object Home {
           cls := "shrink-0",
           "Contribute here: ",
           a(
-            href := "https://github.com/kubukoz/smithy4s-code-generation",
+            href := "https://github.com/kubukoz/smithy4s-codegen-ui",
             target := "_blank",
-            "https://github.com/kubukoz/smithy4s-code-generation"
+            "https://github.com/kubukoz/smithy4s-codegen-ui"
           )
         )
       ),
