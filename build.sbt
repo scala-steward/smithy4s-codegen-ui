@@ -8,6 +8,9 @@ ThisBuild / scalaVersion := "2.13.16"
 ThisBuild / dynverSeparator := "-"
 
 ThisBuild / mergifyStewardConfig ~= (_.map(_.withMergeMinors(true)))
+ThisBuild / mergifySuccessConditions := List(
+  MergifyCondition.Custom("status-success=Build and Test")
+)
 
 val http4sVersion = "0.23.30"
 val smithyVersion = "1.60.3"
