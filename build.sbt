@@ -71,7 +71,7 @@ lazy val frontend = (project in file("modules/frontend"))
      * It provides static types for the browser DOM APIs.
      */
     libraryDependencies ++= Seq(
-      "org.scala-js" %%% "scalajs-dom" % "2.8.0",
+      "org.scala-js" %%% "scalajs-dom" % "2.8.1",
       "com.raquo" %%% "laminar" % "17.2.1",
       "com.disneystreaming.smithy4s" %%% "smithy4s-http4s" % smithy4sVersion.value,
       "org.http4s" %%% "http4s-dom" % "0.2.12",
