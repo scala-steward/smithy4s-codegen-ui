@@ -15,7 +15,7 @@ ThisBuild / mergifySuccessConditions := List(
 val http4sVersion = "0.23.32"
 val smithyVersion = "1.61.0"
 val circeVersion = "0.14.13"
-val cirisVersion = "3.10.0"
+val cirisVersion = "3.11.0"
 
 lazy val baseUri = settingKey[String](
   """Base URI of the backend, defaults to `""` (empty string)."""
