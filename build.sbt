@@ -14,7 +14,7 @@ ThisBuild / mergifySuccessConditions := List(
 
 val http4sVersion = "0.23.32"
 val smithyVersion = "1.62.0"
-val circeVersion = "0.14.13"
+val circeVersion = "0.14.15"
 val cirisVersion = "3.11.0"
 
 lazy val baseUri = settingKey[String](
