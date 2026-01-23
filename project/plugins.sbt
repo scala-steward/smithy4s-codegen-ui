@@ -1,7 +1,7 @@
 addSbtPlugin(
-  "com.disneystreaming.smithy4s" % "smithy4s-sbt-codegen" % "0.18.45"
+  "com.disneystreaming.smithy4s" % "smithy4s-sbt-codegen" % "0.18.46"
 )
-addSbtPlugin("com.github.sbt" % "sbt-native-packager" % "1.11.4")
+addSbtPlugin("com.github.sbt" % "sbt-native-packager" % "1.11.7")
 addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.20.1")
 addSbtPlugin("io.spray" % "sbt-revolver" % "0.10.0")
 addSbtPlugin("com.github.sbt" % "sbt-dynver" % "5.1.1")
