@@ -13,7 +13,7 @@ object Home {
       api: SmithyCodeGenerationService[EventStream],
       config: EventStream[Either[Throwable, GetConfigurationOutput]]
   ) = {
-    val editor = new CodeEditor(config.map(_.map(_.availableDependencies)))
+    val editor = new CodeEditor(config)
     val viewer = new CodeViewer()
 
     locally {
