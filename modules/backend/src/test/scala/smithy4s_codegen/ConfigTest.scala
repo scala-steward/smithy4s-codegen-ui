@@ -38,7 +38,11 @@ object ConfigTest extends SimpleIOSuite {
     IO {
       val parsed = parser.parse(jsonContent)
       val hasEmptyEntries = parsed.toOption.exists { json =>
-        json.hcursor.downField("entries").as[Map[String, io.circe.Json]].map(_.isEmpty).contains(true)
+        json.hcursor
+          .downField("entries")
+          .as[Map[String, io.circe.Json]]
+          .map(_.isEmpty)
+          .contains(true)
       }
 
       expect(hasEmptyEntries)
@@ -52,7 +56,7 @@ object ConfigTest extends SimpleIOSuite {
 
       // The entry name should be simpler than the full artifact ID
       expect(entryName.length < artifactId.length) and
-      expect(artifactId.contains(entryName))
+        expect(artifactId.contains(entryName))
     }
   }
 }
