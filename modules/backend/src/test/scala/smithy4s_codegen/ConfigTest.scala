@@ -15,7 +15,7 @@ object ConfigTest extends SimpleIOSuite {
           "file": "/path/to/smithy4s-protocol-0.18.46.jar"
         },
         "alloy-core": {
-          "artifactId": "com.disneystreaming.alloy:alloy-core:0.3.33",
+          "artifactId": "com.disneystreaming.alloy:alloy-core:0.3.36",
           "file": "/path/to/alloy-core-0.3.33.jar"
         }
       }
@@ -38,7 +38,11 @@ object ConfigTest extends SimpleIOSuite {
     IO {
       val parsed = parser.parse(jsonContent)
       val hasEmptyEntries = parsed.toOption.exists { json =>
-        json.hcursor.downField("entries").as[Map[String, io.circe.Json]].map(_.isEmpty).contains(true)
+        json.hcursor
+          .downField("entries")
+          .as[Map[String, io.circe.Json]]
+          .map(_.isEmpty)
+          .contains(true)
       }
 
       expect(hasEmptyEntries)
@@ -52,7 +56,7 @@ object ConfigTest extends SimpleIOSuite {
 
       // The entry name should be simpler than the full artifact ID
       expect(entryName.length < artifactId.length) and
-      expect(artifactId.contains(entryName))
+        expect(artifactId.contains(entryName))
     }
   }
 }
