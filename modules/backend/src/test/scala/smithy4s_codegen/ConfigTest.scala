@@ -15,7 +15,7 @@ object ConfigTest extends SimpleIOSuite {
           "file": "/path/to/smithy4s-protocol-0.18.46.jar"
         },
         "alloy-core": {
-          "artifactId": "com.disneystreaming.alloy:alloy-core:0.3.36",
+          "artifactId": "com.disneystreaming.alloy:alloy-core:0.3.37",
           "file": "/path/to/alloy-core-0.3.33.jar"
         }
       }
