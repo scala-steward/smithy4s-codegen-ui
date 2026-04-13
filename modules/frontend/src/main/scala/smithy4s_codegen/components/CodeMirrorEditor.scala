@@ -40,21 +40,24 @@ object CodeMirrorEditor {
       else
         EditorViewCompanion.lineWrapping
 
-    val extensions: js.Array[js.Any] = js.Array(
-      lineNumbersFn(),
-      highlightActiveLineGutterFn(),
-      drawSelectionFn(),
-      historyFn(),
-      indentOnInputFn(),
-      syntaxHighlightingFn(defaultHighlightStyle),
-      keymap.of(defaultKeymap.concat(historyKeymap).concat(completionKeymap)),
-      editabilityExtension,
-      changeListener
-    ).concat(githubLight.asInstanceOf[js.Array[js.Any]])
-     .concat(js.Array(extraExtensions*))
+    val extensions: js.Array[js.Any] = js
+      .Array(
+        lineNumbersFn(),
+        highlightActiveLineGutterFn(),
+        drawSelectionFn(),
+        historyFn(),
+        indentOnInputFn(),
+        syntaxHighlightingFn(defaultHighlightStyle),
+        keymap.of(defaultKeymap.concat(historyKeymap).concat(completionKeymap)),
+        editabilityExtension,
+        changeListener
+      )
+      .concat(githubLight.asInstanceOf[js.Array[js.Any]])
+      .concat(js.Array(extraExtensions *))
 
     div(
-      cls := (if (contentSized) "cm-wrapper-content-sized" else "cm-wrapper h-full overflow-hidden"),
+      cls := (if (contentSized) "cm-wrapper-content-sized"
+              else "cm-wrapper h-full overflow-hidden"),
       onMountCallback { ctx =>
         val state = EditorState.create(
           js.Dynamic
