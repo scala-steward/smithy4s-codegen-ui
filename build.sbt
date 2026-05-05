@@ -5,7 +5,7 @@ import sbtprojectmatrix.ProjectMatrixPlugin
 
 ThisBuild / organization := "com.example"
 ThisBuild / organizationName := "example"
-val scala3 = "3.8.2"
+val scala3 = "3.8.3"
 ThisBuild / scalaVersion := scala3
 ThisBuild / dynverSeparator := "-"
 
@@ -20,10 +20,10 @@ ThisBuild / scalacOptions ++= Seq(
 
 ThisBuild / githubWorkflowGenerate := {}
 
-val http4sVersion = "0.23.33"
-val smithyVersion = "1.69.0"
+val http4sVersion = "0.23.34"
+val smithyVersion = "1.70.0"
 val circeVersion = "0.14.15"
-val cirisVersion = "3.11.0"
+val cirisVersion = "3.14.1"
 
 lazy val baseUri = settingKey[String](
   """Base URI of the backend, defaults to `""` (empty string)."""
@@ -213,7 +213,7 @@ lazy val backend = (project in file("modules/backend"))
       "is.cir" %% "ciris" % cirisVersion,
       "software.amazon.smithy" % "smithy-model" % smithyVersion,
       "org.http4s" %% "http4s-ember-server" % http4sVersion,
-      "org.typelevel" %% "weaver-cats" % "0.11.3" % Test
+      "org.typelevel" %% "weaver-cats" % "0.12.0" % Test
     ),
     smithyClasspathDir := "smithy-classpath",
     smithyClasspath := Seq(
