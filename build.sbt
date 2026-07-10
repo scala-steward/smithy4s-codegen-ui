@@ -21,7 +21,7 @@ ThisBuild / scalacOptions ++= Seq(
 ThisBuild / githubWorkflowGenerate := {}
 
 val http4sVersion = "0.23.34"
-val smithyVersion = "1.71.0"
+val smithyVersion = "1.72.0"
 val circeVersion = "0.14.16"
 val cirisVersion = "3.15.0"
 
