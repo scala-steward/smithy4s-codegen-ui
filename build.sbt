@@ -105,7 +105,7 @@ ThisBuild / githubWorkflowAddedJobs += WorkflowJob(
 val http4sVersion = "0.23.38"
 val smithyVersion = "1.74.0"
 val circeVersion = "0.14.17"
-val cirisVersion = "3.15.1"
+val cirisVersion = "3.15.2"
 
 lazy val baseUri = settingKey[String](
   """Base URI of the backend, defaults to `""` (empty string)."""
